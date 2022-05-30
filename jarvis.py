@@ -20,10 +20,8 @@ import sys
 import time
 import contextlib
 with contextlib.redirect_stdout(None):
-    from pygame import mixer
-    
+    from pygame import mixer  
 import pyjokes
-
 
 
 # init function to get an engine instance for the speech synthesis
@@ -31,7 +29,6 @@ import pyjokes
 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty('voices')
-
 # print(voices[0].id)
 
 engine.setProperty('voice', voices[0].id)  #Use voices[1].id for female voice
@@ -57,9 +54,7 @@ def wishMe():
 
 #creating takeCommand function
 def takeCommand():
-
     # it takes microphone input from the user and returns string output
-
     r = sr.Recognizer()  # to recognize audio
     with sr.Microphone() as source:
         print("Listening......")
@@ -85,7 +80,6 @@ def sendEmail(to,content):
     server.login('thisisme@gmail.com','mypwd')
     server.sendmail('thisisme@gmail.com',to,content)
     server.close()
-
 
 
 if __name__ == '__main__':
